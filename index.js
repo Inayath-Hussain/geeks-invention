@@ -74,12 +74,17 @@ const mainContent = document.getElementById('main-content')
 document.addEventListener('scroll', (e) => {
     const purpleSection = document.getElementById('purple-section');
     const div = purpleSection.getBoundingClientRect()
+    const textDiv = purpleSection.children.item(1)
 
     if (div.top <= (window.innerHeight * 80 / 100) && div.top > ((-(window.innerHeight) * 40 / 100))) {
         mainContent.style.backgroundColor = colors.section1
     }
 
     if (div.top > (window.innerHeight * 80 / 100)) mainContent.style.backgroundColor = '#000'
+
+    if (div.top <= (window.innerHeight * 20 / 100)) textDiv.setAttribute('data-state', 'open')
+
+    if (div.top > (window.innerHeight * 20 / 100)) textDiv.setAttribute('data-state', 'closed')
 })
 
 document.addEventListener('scroll', (e) => {

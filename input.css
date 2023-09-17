@@ -65,6 +65,7 @@ body {
     left: 109%;
 }
 
+
 @media screen and (min-width: 768px) {
     .d-ltr {
         grid-template-columns: 1fr 1fr;
@@ -81,5 +82,19 @@ body {
 
     #main-content {
         transition: background-color 0.4s ease;
+    }
+
+    [data-state] {
+        transition: all 1s ease .2s;
+    }
+
+    [data-state="closed"] {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    [data-state="open"] {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
