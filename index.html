@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="output.css">
 </head>
 <body>
-  <header class="p-4 fixed top-0 flex flex-row justify-between items-center w-screen px-9 py-8">
+  <header class="p-4 lg:fixed z-20 top-0 flex flex-row justify-between items-center w-screen px-9 py-8">
     <img src="geeks-logo-white.svg" alt="" height="25">
 
-    <ul class="w-[45vw] text-white text-sm flex flex-row justify-around items-center
-    [&>*]:cursor-pointer [&>*]:pt-[5px] [&>*]:no-underline [&>*]:relative">
+    <ul class="lg:w-[45vw] text-white text-sm lg:flex flex-row justify-around items-center
+    [&>*]:cursor-pointer [&>*]:pt-[5px] [&>*]:no-underline [&>*]:relative [&>*]:mx-1 hidden">
       <li class="underline-trans">HOME</li>
       <li class="underline-trans">WORKS</li>
       <li class="underline-trans">TECHNOLOGIES</li>
@@ -20,16 +20,73 @@
       <li class="underline-trans">COMPANY</li>
       <li class="underline-trans">CONTACTS</li>
     </ul>
+
+    <div id="sandwich" class="flex flex-col justify-center w-6 items-stretch lg:hidden gap-1 cursor-pointer">
+      <div class="bg-white w-full h-1"></div>
+      <div class="bg-white w-full h-1"></div>
+      <div class="bg-white w-full h-1"></div>
+    </div>
   </header>
 
-    <div id="particle-slider">
-        <div class="slides">
-          <div id="first-slide" class="slide" data-src="G.svg">
+    
+      <div id="particle-slider" class="lg:fixed lg:inset-0 lg:z-10 w-screen h-screen">
+          <div class="slides">
+            <div id="first-slide" class="slide" data-src="G.svg">
+              </div>
             </div>
+              <canvas style="width: 100vw; height: 100vh;" class="draw"></canvas>
+    </div>
+
+    <!-- fake div -->
+    <div class="lg:h-screen lg:w-screen"></div>
+
+    <div id="main-content" class="lg:relative lg:z-[11]">
+      <!-- purle div -->
+      <div id="purple-section" class="bg-purple-sec lg:bg-inherit py-6 px-3 min-h-screen w-screen box-border
+      md:grid md:items-center font-normal d-ltr md:px-12
+       lg:px-36 lg:pt-14">
+        <img class="g-img" src="purple-sec-img-industry-fintech.svg" alt="">
+  
+        <!-- text -->
+        <div class="mt-6 g-text">
+          <h1 class="mb-2 text-6xl">Fintech Solution</h1>
+          <p class="text-2xl opacity-60">Transforming Fintech with AI</p>
+  
+          <!-- tags -->
+          <div class="my-8 [&>*]:mx-2 [&>*]:my-2 [&>*]:p-2 [&>*]:px-4 [&>*]:rounded-3xl [&>*]:bg-[#ffffff1c] [&>*]:text-sm flex-wrap flex flex-row">
+            <span>Fraud detection</span>
+            <span>Transaction categorisation</span>
+            <span>Risk Scoring</span>
           </div>
-            <canvas style="height: 100vh; width: 100vw;" class="draw"></canvas>
+  
+          <p class="text-left text-xl font-normal mb-12">Empower your financial institution with our advanced fintech solutions. From real-time fraud detection to easy bookkeeping, our software development services provide credit risk scoring for accurate lending eligibility, transaction categorization for seamless organization, and anomaly detection to safeguard your assets</p>
+  
+          <div class="grid md:block">
+            <button style="border: 1px solid #fff;" class="hover:bg-white group1 py-3 pl-5 pr-12 rounded-3xl m-auto 
+            hover:text-purple-sec"> <p id="purple-btn" class="relative text-xl">See full case study</p> </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
 
 
-    <script src="index.js" type="text/javascript"></script>
+            
+            <ul role="dialog" id="modal" class="fixed z-40 w-screen h-screen inset-0 backdrop-blur-sm bg-black flex-col justify-center items-center
+            [&>*]:cursor-pointer [&>*]:pt-[5px] [&>*]:no-underline [&>*]:relative text-white text-xl [&>*]:my-3 hidden">
+              
+              <img id="close" src="close.svg" class="!absolute text-2xl z-10 top-4 right-4" height="30" width="30" alt="X">
+
+              <li class="underline-trans">HOME</li>
+              <li class="underline-trans">WORKS</li>
+              <li class="underline-trans">TECHNOLOGIES</li>
+              <li class="underline-trans">SERVICES</li>
+              <li class="underline-trans">COMPANY</li>
+              <li class="underline-trans">CONTACTS</li>
+
+            </ul>
+
+
+            <script src="index.js" type="text/javascript"></script>
 </body>
 </html>

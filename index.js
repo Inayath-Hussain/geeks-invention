@@ -44,3 +44,61 @@ var initParticleSlider = function () {
     (window.addEventListener
         ? window.addEventListener('load', initParticleSlider, false)
         : window.onload = initParticleSlider);
+
+
+let sandwich = document.getElementById('sandwich');
+let modal = document.getElementById('modal')
+let closeBtn = document.getElementById('close')
+
+sandwich.addEventListener('click', (e) => {
+    console.log(modal)
+    modal.classList.replace('hidden', 'block')
+    modal.classList.add('flex')
+})
+
+closeBtn.addEventListener('click', () => {
+    modal.classList.replace('block', 'hidden')
+    modal.classList.remove('flex')
+})
+
+
+const colors = {
+    section1: '#3F2CAA', // purple
+    section2: '#01B5AC', // aqua
+    section3: '#19181E', // black
+    section4: '#23252C' // grey
+}
+
+const mainContent = document.getElementById('main-content')
+
+document.addEventListener('scroll', (e) => {
+    const purpleSection = document.getElementById('purple-section');
+    const div = purpleSection.getBoundingClientRect()
+
+    if (div.top <= (window.innerHeight * 80 / 100) && div.top > ((-(window.innerHeight) * 40 / 100))) {
+        mainContent.style.backgroundColor = colors.section1
+    }
+
+    if (div.top > (window.innerHeight * 80 / 100)) mainContent.style.backgroundColor = '#000'
+})
+
+document.addEventListener('scroll', (e) => {
+    const divs = document.querySelectorAll('section')
+    console.log(divs)
+
+    divs.forEach(d => {
+        const div = d.getBoundingClientRect()
+        const ih = window.innerHeight
+
+
+        if ((div.bottom <= ih && div.bottom > 0) && div.bottom > (ih * 40 / 100)) {
+            document.body.style.backgroundColor = colors[d.id]
+            console.log('bottom', colors[d.id])
+
+        } else if (div.top > ((-ih) * 60 / 100) && div.top <= (ih * 40 / 100)) {
+            document.body.style.backgroundColor = colors[d.id]
+            console.log('top', colors[d.id], ((-ih) * 60 / 100))
+        }
+    })
+
+})

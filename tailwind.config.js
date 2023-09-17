@@ -5,9 +5,14 @@ module.exports = {
     extend: {
       backgroundColor: {
         header: '#16181C'
-      }
+      },
+      colors: {
+        'purple-sec': '#3F2CAA',
+        'aqua-sec': '#01B5AC',
+        'black-sec': '#19181E'
+      },
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-animate')],
 }
 

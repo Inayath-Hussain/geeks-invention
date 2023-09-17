@@ -27,10 +27,12 @@
 }
 
 body {
+    overflow-x: hidden;
     margin: 0;
     background-color: black;
+    color: #fff;
     font-family: 'radikalRegular', Helvetica, Arial, sans-serif;
-    src: url(radikal-font-family-1694810713-0/RadikalTrial-Regular-BF642254c157251.otf)
+    src: url(radikal-font-family-1694810713-0/RadikalTrial-Regular-BF642254c157251.otf) format("opentype");
 }
 
 .underline-trans::before {
@@ -47,4 +49,37 @@ body {
 
 .underline-trans:hover:before {
     transform: scaleX(1);
+}
+
+
+#purple-btn::after {
+    content: '→';
+    position: absolute;
+    top: center;
+    left: 102%;
+
+    transition: left 0.3s ease;
+}
+
+.group1:hover #purple-btn::after {
+    left: 109%;
+}
+
+@media screen and (min-width: 768px) {
+    .d-ltr {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "text img";
+    }
+
+    .g-img {
+        grid-area: img;
+    }
+
+    .g-text {
+        grid-area: text;
+    }
+
+    #main-content {
+        transition: background-color 0.4s ease;
+    }
 }
