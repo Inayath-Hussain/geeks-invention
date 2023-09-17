@@ -35,6 +35,10 @@ body {
     src: url(radikal-font-family-1694810713-0/RadikalTrial-Regular-BF642254c157251.otf) format("opentype");
 }
 
+header {
+    transition: background-color .4s ease;
+}
+
 .underline-trans::before {
     content: "";
     position: absolute;

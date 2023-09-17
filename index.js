@@ -70,6 +70,7 @@ const colors = {
 }
 
 const mainContent = document.getElementById('main-content')
+const header = document.querySelector('header')
 
 document.addEventListener('scroll', (e) => {
     const purpleSection = document.getElementById('purple-section');
@@ -85,6 +86,10 @@ document.addEventListener('scroll', (e) => {
     if (div.top <= (window.innerHeight * 20 / 100)) textDiv.setAttribute('data-state', 'open')
 
     if (div.top > (window.innerHeight * 20 / 100)) textDiv.setAttribute('data-state', 'closed')
+
+    if (div.top <= (window.innerHeight * 10 / 100) && div.bottom > (window.innerHeight * 40 / 100)) header.style.backgroundColor = colors.section1
+
+    if (div.top > (window.innerHeight * 10 / 100)) header.style.backgroundColor = '#000'
 })
 
 document.addEventListener('scroll', (e) => {
