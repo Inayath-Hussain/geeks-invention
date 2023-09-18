@@ -48,20 +48,44 @@ var initParticleSlider = function () {
 // modal----------------------------------------------------
 let sandwich = document.getElementById('sandwich');
 let modal = document.getElementById('modal')
-let closeBtn = document.getElementById('close')
+// let closeBtn = document.getElementById('close')
 
 sandwich.addEventListener('click', (e) => {
-    console.log(modal)
-    modal.setAttribute('data-modal', 'open')
+
+    console.log(sandwich.children)
+    if (modal.getAttribute('data-modal') === 'closed') {
+        sandwich.style.position = 'fixed'
+        sandwich.style.zIndex = 50
+        sandwich.style.top = '2.13rem'
+        sandwich.style.right = '2.25rem'
+
+        modal.setAttribute('data-modal', 'open')
+
+        sandwich.children.item(0).classList.add('t-rotate')
+        sandwich.children.item(1).classList.add('hidden')
+        sandwich.children.item(2).classList.add('b-rotate')
+
+    }
+    else {
+        sandwich.style.removeProperty('position')
+        sandwich.style.removeProperty('z-index')
+
+        modal.setAttribute('data-modal', 'closed')
+
+        sandwich.children.item(0).classList.remove('t-rotate')
+        sandwich.children.item(1).classList.remove('hidden')
+        sandwich.children.item(2).classList.remove('b-rotate')
+
+    }
     // modal.classList.replace('hidden', 'block')
     // modal.classList.add('flex')
 })
 
-closeBtn.addEventListener('click', () => {
-    modal.setAttribute('data-modal', 'closed')
-    // modal.classList.replace('block', 'hidden')
-    // modal.classList.remove('flex')
-})
+// closeBtn.addEventListener('click', () => {
+//     modal.setAttribute('data-modal', 'closed')
+//     // modal.classList.replace('block', 'hidden')
+//     // modal.classList.remove('flex')
+// })
 // ------------------------------------------------------------
 
 const colors = {
