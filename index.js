@@ -45,22 +45,24 @@ var initParticleSlider = function () {
         ? window.addEventListener('load', initParticleSlider, false)
         : window.onload = initParticleSlider);
 
-
+// modal----------------------------------------------------
 let sandwich = document.getElementById('sandwich');
 let modal = document.getElementById('modal')
 let closeBtn = document.getElementById('close')
 
 sandwich.addEventListener('click', (e) => {
     console.log(modal)
-    modal.classList.replace('hidden', 'block')
-    modal.classList.add('flex')
+    modal.setAttribute('data-modal', 'open')
+    // modal.classList.replace('hidden', 'block')
+    // modal.classList.add('flex')
 })
 
 closeBtn.addEventListener('click', () => {
-    modal.classList.replace('block', 'hidden')
-    modal.classList.remove('flex')
+    modal.setAttribute('data-modal', 'closed')
+    // modal.classList.replace('block', 'hidden')
+    // modal.classList.remove('flex')
 })
-
+// ------------------------------------------------------------
 
 const colors = {
     section1: '#3F2CAA', // purple
@@ -77,16 +79,19 @@ document.addEventListener('scroll', (e) => {
     const div = purpleSection.getBoundingClientRect()
     const textDiv = purpleSection.children.item(1)
 
+    // bg color transition
     if (div.top <= (window.innerHeight * 80 / 100) && div.top > ((-(window.innerHeight) * 40 / 100))) {
         mainContent.style.backgroundColor = colors.section1
     }
 
     if (div.top > (window.innerHeight * 80 / 100)) mainContent.style.backgroundColor = '#000'
 
+    // text transition
     if (div.top <= (window.innerHeight * 20 / 100)) textDiv.setAttribute('data-state', 'open')
 
     if (div.top > (window.innerHeight * 20 / 100)) textDiv.setAttribute('data-state', 'closed')
 
+    // header bg-color transition
     if (div.top <= (window.innerHeight * 10 / 100) && div.bottom > (window.innerHeight * 40 / 100)) header.style.backgroundColor = colors.section1
 
     if (div.top > (window.innerHeight * 10 / 100)) header.style.backgroundColor = '#000'
