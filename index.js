@@ -104,11 +104,13 @@ document.addEventListener('scroll', (e) => {
     const textDiv = purpleSection.children.item(1)
 
     // bg color transition
-    if (div.top <= (window.innerHeight * 80 / 100) && div.top > ((-(window.innerHeight) * 40 / 100))) {
+    if (div.top <= (window.innerHeight * 80 / 100) && div.top > ((-(window.innerHeight) * 50 / 100))) {
         mainContent.style.backgroundColor = colors.section1
     }
 
-    if (div.top > (window.innerHeight * 80 / 100)) mainContent.style.backgroundColor = '#000'
+    if (div.bottom)
+
+        if (div.top > (window.innerHeight * 80 / 100)) mainContent.style.backgroundColor = '#000'
 
     // text transition
     if (div.top <= (window.innerHeight * 20 / 100)) textDiv.setAttribute('data-state', 'open')
@@ -127,17 +129,27 @@ document.addEventListener('scroll', (e) => {
 
     divs.forEach(d => {
         const div = d.getBoundingClientRect()
+        const textDiv = d.children.item(1)
         const ih = window.innerHeight
 
 
-        if ((div.bottom <= ih && div.bottom > 0) && div.bottom > (ih * 40 / 100)) {
-            document.body.style.backgroundColor = colors[d.id]
+        if ((div.bottom <= ih && div.bottom > 0) && div.bottom > (ih * 50 / 100)) {
+            // document.body.style.backgroundColor = colors[d.id]
+            header.style.backgroundColor = colors[d.id]
+            mainContent.style.backgroundColor = colors[d.id]
+            textDiv.setAttribute
             console.log('bottom', colors[d.id])
 
-        } else if (div.top > ((-ih) * 60 / 100) && div.top <= (ih * 40 / 100)) {
-            document.body.style.backgroundColor = colors[d.id]
+        } else if (div.top > ((-ih) * 50 / 100) && div.top <= (ih * 50 / 100)) {
+            // document.body.style.backgroundColor = colors[d.id]
+            header.style.backgroundColor = colors[d.id]
+            mainContent.style.backgroundColor = colors[d.id]
             console.log('top', colors[d.id], ((-ih) * 60 / 100))
         }
+
+        if (div.top <= (window.innerHeight * 30 / 100)) textDiv.setAttribute('data-state', 'open')
+
+        if (div.top > (window.innerHeight * 30 / 100)) textDiv.setAttribute('data-state', 'closed')
     })
 
 })

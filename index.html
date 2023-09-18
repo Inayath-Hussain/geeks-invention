@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="output.css">
 </head>
 <body>
-  <header class="p-4 lg:fixed z-20 top-0 flex flex-row justify-between items-center w-screen px-9 py-8 lg:h-[10vh]">
+  <header class="p-4 lg:fixed z-20 top-0 flex flex-row justify-between items-center w-screen px-9 py-8 lg:h-[10vh] lg:opacity-80">
     <img src="geeks-logo-white.svg" alt="" height="25">
 
     <ul class="lg:w-[45vw] text-white text-sm lg:flex flex-row justify-around items-center
-    [&>*]:cursor-pointer [&>*]:pt-[5px] [&>*]:no-underline [&>*]:relative [&>*]:mx-1 hidden">
+    [&>*]:cursor-pointer [&>*]:pt-[5px] [&>*]:no-underline [&>*]:relative [&>*]:mx-1 hidden [&>*]:lg:opacity-100 [&>*]:opacity-100">
       <li class="underline-trans">HOME</li>
       <li class="underline-trans">WORKS</li>
       <li class="underline-trans">TECHNOLOGIES</li>
@@ -41,6 +41,7 @@
     <div class="lg:h-screen lg:w-screen"></div>
 
     <div id="main-content" class="lg:relative lg:z-[11]">
+
       <!-- purle div -->
       <div id="purple-section" class="bg-purple-sec lg:bg-inherit py-6 px-3 min-h-screen w-screen box-border
       md:grid md:items-center font-normal d-ltr md:px-12
@@ -48,8 +49,7 @@
         <img class="g-img" src="purple-sec-img-industry-fintech.svg" alt="">
   
         <!-- text -->
-        <div data-state="closed" class="mt-6 g-text 
-        ">
+        <div data-state="closed" class="mt-6 g-text">
           <h1 class="mb-2 text-6xl">Fintech Solution</h1>
           <p class="text-2xl lg:text-3xl opacity-60">Transforming Fintech with AI</p>
   
@@ -66,14 +66,84 @@
             <button style="border: 1px solid #fff;" class="hover:bg-white group1 py-3 pl-5 pr-12 rounded-3xl m-auto 
             hover:text-purple-sec"> <p id="purple-btn" class="relative text-xl">See full case study</p> </button>
           </div>
+
         </div>
       </div>
 
 
       <!-- aqua section -->
-      <section>
+      <section id="section2" class="bg-aqua-sec gap-[5vw] py-6 px-3 min-h-screen w-screen box-border
+      md:grid md:items-center font-normal d-ltr md:px-12
+      lg:px-36 lg:pt-14 lg:bg-inherit">
+        <img class="g-text" src="aqua-sec-industry-iot.webp" alt="">
+
+        <!-- text -->
+        <div data-state="closed" class="mt-6 g-img">
+          <h1 class="mb-2 text-6xl">Industrial IoT</h1>
+          <p class="text-2xl lg:text-3xl opacity-60">Providing a better connected experience</p>
+          
+          <!-- tags -->
+          <div class="my-8 [&>*]:mx-2 [&>*]:my-2 [&>*]:p-2 [&>*]:px-4 [&>*]:rounded-3xl [&>*]:bg-[#1DBDB5] [&>*]:text-sm flex-wrap flex flex-row">
+            <span>Connected manufacturing</span>
+            <span>Aviation</span>
+            <span>Smart Building</span>
+          </div>
+
+          <p class="text-left text-xl font-normal mb-12">Revolutionize your industry with our innovative IoT solutions. Our software development services offer connected manufacturing, pollution control, smart transportation, and intelligent farming, agriculture, and forestry. With our expertise, you can harness the power of technology to increase efficiency, reduce waste, and optimize operations for a sustainable future.</p>
+
+          <div class="grid md:block">
+            <button style="border: 1px solid #fff;" class="hover:bg-white group1 py-3 pl-5 pr-12 rounded-3xl m-auto 
+            hover:text-aqua-sec"> <p id="purple-btn" class="relative text-xl">See full case study</p> </button>
+          </div>
+        </div>
 
       </section>
+
+      <!-- black section -->
+      <section id="section3" class="bg-black-sec gap-[5vw] py-6 px-3 min-h-screen w-screen box-border
+      md:grid md:items-center font-normal d-ltr md:px-12
+      lg:px-36 lg:pt-14 lg:bg-inherit">
+
+      <img class="g-text" src="blac-sec-industry-education.webp" alt="">
+
+      <!-- text -->
+      <div data-state="closed" class="mt-6 g-img">
+
+        <h1 class="mb-2 text-6xl">Smart Education</h1>
+          <p class="text-2xl lg:text-3xl opacity-60">Elevate your Education Institution</p>
+          
+          <!-- tags -->
+          <div class="my-8 [&>*]:mx-2 [&>*]:my-2 [&>*]:p-2 [&>*]:px-4 [&>*]:rounded-3xl [&>*]:bg-[#303035] [&>*]:text-sm flex-wrap flex flex-row">
+            <span>Learning Management</span>
+            <span>Course offering</span>
+            <span>Professional Training</span>
+          </div>
+
+          <p class="text-left text-xl font-normal mb-12">Elevate your education institution with our comprehensive software solutions. Learning management, course offerings, professional training, certification, and school management tools to streamline your operations and enhance your students' learning experience. Trust us to provide the cutting-edge technology and support you need to thrive in the ever-evolving education industry.</p>
+
+          <div class="grid md:block">
+            <button style="border: 1px solid #fff;" class="hover:bg-white group1 py-3 pl-5 pr-12 rounded-3xl m-auto 
+            hover:text-black-sec"> <p id="purple-btn" class="relative text-xl">See full case study</p> </button>
+          </div>
+
+      </div>
+      </section>
+
+      <!-- info -->
+      <div class="pt-3 pb-20 px-4
+      md:pt-16 md:pb-80
+      lg:pt-16 lg:pb-36">
+        <h2 class="text-center text-4xl lg:text-6xl">Check out more works by Geeks <br class="hidden md:block"> Invention</h2>
+
+        <p class="text-center mt-4 text-xl mb-14
+        md:mt-8 md:mb-16 md:px-10 lg:mx-80">Our case studies describe design and development solutions implemented at our Geeks Invention projects. The stories are a valuable resource for those looking to develop their own mobile apps.</p>
+
+        <div class="grid md:block items-center w-max mx-auto">
+          <button style="border: 1px solid #FF5300;" class="hover:bg-red-btn text-red-btn group1 py-3 pl-5 pr-12 rounded-3xl m-auto 
+          hover:text-white"> <p id="purple-btn" class="relative text-xl">See all case study</p> </button>
+        </div>        
+
+      </div>
 
     </div>
 
