@@ -11,7 +11,8 @@ module.exports = {
         'aqua-sec': '#01B5AC',
         'black-sec': '#19181E',
         'grey-sec': '#23252C',
-        'red-btn': '#FF5300'
+        'red-btn': '#FF5300',
+        'card': '#2E3038'
       },
     },
   },

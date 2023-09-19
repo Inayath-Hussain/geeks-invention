@@ -125,31 +125,52 @@ document.addEventListener('scroll', (e) => {
 
 document.addEventListener('scroll', (e) => {
     const divs = document.querySelectorAll('section')
-    console.log(divs)
+    // console.log(divs)
 
     divs.forEach(d => {
         const div = d.getBoundingClientRect()
-        const textDiv = d.children.item(1)
+        const gridDiv = d.children.item(0)
+        const textDiv = gridDiv.children.item(1)
         const ih = window.innerHeight
 
 
         if ((div.bottom <= ih && div.bottom > 0) && div.bottom > (ih * 50 / 100)) {
-            // document.body.style.backgroundColor = colors[d.id]
-            header.style.backgroundColor = colors[d.id]
-            mainContent.style.backgroundColor = colors[d.id]
-            textDiv.setAttribute
-            console.log('bottom', colors[d.id])
+            const bgColor = d.id ? colors[d.id] : colors[d.getAttribute('data-color')]
+
+            header.style.backgroundColor = bgColor
+            mainContent.style.backgroundColor = bgColor
+            // console.log('bottom', colors[d.id])
 
         } else if (div.top > ((-ih) * 50 / 100) && div.top <= (ih * 50 / 100)) {
             // document.body.style.backgroundColor = colors[d.id]
-            header.style.backgroundColor = colors[d.id]
-            mainContent.style.backgroundColor = colors[d.id]
-            console.log('top', colors[d.id], ((-ih) * 60 / 100))
+
+            const bgColor = d.id ? colors[d.id] : colors[d.getAttribute('data-color')]
+
+            header.style.backgroundColor = bgColor
+            mainContent.style.backgroundColor = bgColor
+            // console.log('top', colors[d.id], ((-ih) * 60 / 100))
         }
 
-        if (div.top <= (window.innerHeight * 30 / 100)) textDiv.setAttribute('data-state', 'open')
+        if (div.top <= (window.innerHeight * 40 / 100)) textDiv.setAttribute('data-state', 'open')
 
-        if (div.top > (window.innerHeight * 30 / 100)) textDiv.setAttribute('data-state', 'closed')
+        if (div.top > (window.innerHeight * 40 / 100)) textDiv.setAttribute('data-state', 'closed')
+
+        if (d.getAttribute('data-has-zoom') && div.top <= (window.innerHeight * 30 / 100)) d.children.item(1).setAttribute('data-zoom', 'true')
+
+        if (d.getAttribute('data-has-zoom') && div.top > (window.innerHeight * 30 / 100)) d.children.item(1).setAttribute('data-zoom', 'false')
+
+        // if (d.getAttribute('data-zoom') && div.top <= (window.innerHeight * 70 / 100)) {
+        //     console.log(d.getAttribute('data-zoom'))
+        //     const bgColor = d.id ? colors[d.id] : colors[d.getAttribute('data-color')]
+
+        //     textDiv.setAttribute('data-state', 'open')
+        //     header.style.backgroundColor = bgColor
+        //     mainContent.style.backgroundColor = bgColor
+        // }
+
+        // if (d.getAttribute('data-zoom') && div.top > (window.innerHeight * 70 / 100)) textDiv.setAttribute('data-state', 'closed')
     })
 
 })
+
+

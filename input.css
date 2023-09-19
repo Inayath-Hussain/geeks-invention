@@ -151,7 +151,8 @@ header {
         transition: background-color 0.4s ease;
     }
 
-    [data-state] {
+    [data-state],
+    [data-zoom]>div {
         transition: all 1s ease .2s;
     }
 
@@ -164,4 +165,82 @@ header {
         opacity: 1;
         transform: translateY(0);
     }
+
+    [data-zoom="false"]>div {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    [data-zoom="true"]>div {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    [data-zoom="true"] .first {
+        transition-delay: 0s;
+    }
+
+    [data-zoom="true"] .second {
+        transition-delay: 0.1s;
+    }
+
+    [data-zoom="true"] .third {
+        transition-delay: 0.2s;
+    }
+
+    [data-zoom="true"] .fourth {
+        transition-delay: 0.3s;
+    }
+
+    [data-zoom="true"] .fifth {
+        transition-delay: 0.4s;
+    }
+
+    [data-zoom="true"] .sixth {
+        transition-delay: 0.5s;
+    }
+
+    [data-zoom="false"] .first {
+        transition-delay: 0.5s;
+    }
+
+    [data-zoom="false"] .second {
+        transition-delay: 0.4s;
+    }
+
+    [data-zoom="false"] .third {
+        transition-delay: 0.3s;
+    }
+
+    [data-zoom="false"] .fourth {
+        transition-delay: 0.2s;
+    }
+
+    [data-zoom="false"] .fifth {
+        transition-delay: 0.1s;
+    }
+
+    [data-zoom="false"] .sixth {
+        transition-delay: 0s;
+    }
+
+    .short-grid {
+        grid-template: 1fr 1fr / 1fr 1fr 1fr;
+    }
+}
+
+.platform-icons-contn {
+    grid-template: 1fr 1fr 1fr/ 1fr 1fr;
+}
+
+#cards-container>div>img {
+    margin-bottom: 32px;
+}
+
+#cards-container>div>p {
+    margin: 8px 0;
 }
