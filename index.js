@@ -79,15 +79,7 @@ sandwich.addEventListener('click', (e) => {
         sandwich.children.item(2).classList.remove('b-rotate')
 
     }
-    // modal.classList.replace('hidden', 'block')
-    // modal.classList.add('flex')
 })
-
-// closeBtn.addEventListener('click', () => {
-//     modal.setAttribute('data-modal', 'closed')
-//     // modal.classList.replace('block', 'hidden')
-//     // modal.classList.remove('flex')
-// })
 // ------------------------------------------------------------
 
 const colors = {
@@ -107,13 +99,9 @@ document.addEventListener('scroll', (e) => {
     const textDiv = purpleSection.children.item(1)
 
     // bg color transition
-    if (div.top <= (window.innerHeight * 80 / 100) && div.top > ((-(window.innerHeight) * 50 / 100))) {
-        mainContent.style.backgroundColor = colors.section1
-    }
+    if (div.top <= (window.innerHeight * 80 / 100) && div.top > ((-(window.innerHeight) * 50 / 100))) mainContent.style.backgroundColor = colors.section1
 
-    if (div.bottom)
-
-        if (div.top > (window.innerHeight * 80 / 100)) mainContent.style.backgroundColor = '#000'
+    if (div.top > (window.innerHeight * 80 / 100)) mainContent.style.backgroundColor = '#000'
 
     // text transition
     if (div.top <= (window.innerHeight * 20 / 100)) textDiv.setAttribute('data-state', 'open')
@@ -131,7 +119,6 @@ document.addEventListener('scroll', (e) => {
 // all sections ---------------------------------------------------------------------------------
 document.addEventListener('scroll', (e) => {
     const divs = document.querySelectorAll('section')
-    // console.log(divs)
 
     divs.forEach(d => {
         const div = d.getBoundingClientRect()
@@ -145,16 +132,14 @@ document.addEventListener('scroll', (e) => {
 
             header.style.backgroundColor = bgColor
             mainContent.style.backgroundColor = bgColor
-            // console.log('bottom', colors[d.id])
 
         } else if (div.top > ((-ih) * 50 / 100) && div.top <= (ih * 50 / 100)) {
-            // document.body.style.backgroundColor = colors[d.id]
 
             const bgColor = d.id ? colors[d.id] : colors[d.getAttribute('data-color')]
 
             header.style.backgroundColor = bgColor
             mainContent.style.backgroundColor = bgColor
-            // console.log('top', colors[d.id], ((-ih) * 60 / 100))
+
         }
 
         if (div.top <= (window.innerHeight * 40 / 100)) textDiv.setAttribute('data-state', 'open')
@@ -165,16 +150,6 @@ document.addEventListener('scroll', (e) => {
 
         if (d.getAttribute('data-has-zoom') && div.top > (window.innerHeight * 30 / 100)) d.children.item(1).setAttribute('data-zoom', 'false')
 
-        // if (d.getAttribute('data-zoom') && div.top <= (window.innerHeight * 70 / 100)) {
-        //     console.log(d.getAttribute('data-zoom'))
-        //     const bgColor = d.id ? colors[d.id] : colors[d.getAttribute('data-color')]
-
-        //     textDiv.setAttribute('data-state', 'open')
-        //     header.style.backgroundColor = bgColor
-        //     mainContent.style.backgroundColor = bgColor
-        // }
-
-        // if (d.getAttribute('data-zoom') && div.top > (window.innerHeight * 70 / 100)) textDiv.setAttribute('data-state', 'closed')
     })
 
 })
@@ -185,23 +160,14 @@ document.addEventListener('scroll', (e) => {
 let scrollPosition = 0;
 
 document.addEventListener('scroll', () => {
-    console.log(window.scrollY)
     let currentScrollPosition = window.scrollY
     const sandwich = document.getElementById('sandwich')
 
     if (scrollPosition > currentScrollPosition) {
         sandwich.style.display = 'flex'
-        // sandwich.style.position = 'fixed'
-        // sandwich.style.top = '24px'
-        // sandwich.style.right = '28px'
-        // sandwich.style.backgroundColor = '#000'
-        // sandwich.style.padding = '8px'
-        // sandwich.style.width = '48px'
     }
     else {
         sandwich.style.display = 'none'
-        // sandwich.style.width = '32px'
-        // sandwich.style.padding = '0'
     }
     scrollPosition = currentScrollPosition
 })
@@ -213,7 +179,6 @@ document.addEventListener('scroll', () => {
     const div = mainContent.getBoundingClientRect()
 
     if (div.bottom <= (window.innerHeight * 40 / 100)) {
-        console.log('main content end')
         mainContent.style.backgroundColor = '#16181c'
         header.style.backgroundColor = '#16181c'
     }
@@ -229,7 +194,6 @@ document.addEventListener('scroll', () => {
     const div = document.getElementById('final')
 
     if (window.scrollY > window.innerHeight) {
-        console.log('true')
         div.setAttribute('data-show', 'true')
     } else {
         div.setAttribute('data-show', 'false')
