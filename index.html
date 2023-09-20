@@ -31,10 +31,10 @@
     
   <div class="">
 
-    <div class="fixed z-[5] h-screen w-screen flex justify-center items-center">
+    <div class="absolute lg:fixed z-[5] h-screen w-screen flex justify-center items-center">
       <div>
-        <h1 class="w-max mx-auto text-center text-6xl">EMBRACE THE FUTURE</h1>
-        <p class="w-max mt-6 mx-auto text-center text-4xl">Welcome to the Age of Action</p>
+        <h1 class="w-max mx-auto text-center text-3xl md:text-6xl">EMBRACE THE FUTURE</h1>
+        <p class="w-max mt-6 mx-auto text-center text-xl md:text-4xl">Welcome to the Age of Action</p>
       </div>
 
     </div>
@@ -411,8 +411,56 @@
     <!-- fake div -->
     <div class="lg:h-screen lg:w-screen"></div>
 
-    <div id="final" class="lg:fixed lg:inset-0 lg:z-10 w-screen h-screen lg:hidden">
+    <!-- mobile -->
+    <!-- entire div p 58 15 20 -->
+    <!-- first section p - 52 0 -->
+    <!--  -->
+    <div id="final" data-show="false" class="pt-14 px-4 pb-5 w-screen h-screen bg-header
+    lg:fixed lg:inset-0 lg:z-10 end-section">
+
+    <!-- first section -->
+      <div class="py-16 self-center">
+        <h1 class="pb-5 px-9 text-center text-4xl md:text-5xl">Get to know us better!</h1>
+        <p class="px-7 pb-9 text-center text">It is a pleasure to have you on our website. Let us know if there's an opportunity to do something together.</p>
+
+        <div class="grid">
+          <button style="border: 1px solid #FF5300;" class="mx-auto text-white bg-red-btn py-3 px-7 rounded-3xl
+          hover:bg-white hover:text-red-btn
+          md:mb-24">
+          Drop us a message
+        </button>
+        </div>
+      </div>
+
+      <div class="pt-24 pb-6 gap-4 px-6 self-end md:grid 
+      md:grid-cols-footer md:grid-rows-footer 
+      lg:grid-cols-footer-lg lg:grid-rows-none">
+        <div class="flex flex-col items-center md:items-start">
+          <img src="assets/geeks-logo-white.svg" alt="">
+          <p class="text-center text-[#B9BABB] md:text-start">447 Broadway, 2nd Floor Suite #772, New York 10013, United States
+            +1-347-535-0004</p>
+        </div>
+
+        <ul class="end-links place-items-center mt-4 gap-4 md:flex md:flex-wrap justify-around items-center [&>*]:no-underline [&>*]:relative [&>*]:cursor-pointer">
+          <li class="underline-trans">Works</li>
+          <li class="underline-trans">Technologies</li>
+          <li class="underline-trans">Services</li>
+          <li class="underline-trans">Company</li>
+          <li class="underline-trans">Contacts</li>
+          <li class="underline-trans">Terms and Conditions</li>
+          <li class="underline-trans">Privacy Policy</li>
+        </ul>
+
+        <div class="grid">
+          <button style="border: 1px solid #fff;" class="mx-auto my-5 text-white rounded-3xl py-3 px-7
+          hover:bg-white hover:text-black">Stay tuned for our updates</button>
+        </div>
+
+      </div>
+
       
+      <p class="text-center mb-3 text-[#454649] md:hidden">&#169; Copyright 2023 . All Rights Reserved</p>
+      <p class="text-center mb-5 hidden text-[#454649] md:block">&#169; Copyright 2023 &mdash; Mobile App Design and Development Company. All Rights Reserved</p>
     </div>
 
             

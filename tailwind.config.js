@@ -14,6 +14,13 @@ module.exports = {
         'red-btn': '#FF5300',
         'card': '#2E3038'
       },
+      gridTemplateColumns: {
+        'footer': '1fr 2fr',
+        'footer-lg': '1fr 3fr 1fr'
+      },
+      gridTemplateRows: {
+        'footer': '1fr 1fr'
+      }
     },
   },
   plugins: [require('tailwindcss-animate')],

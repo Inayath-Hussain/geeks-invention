@@ -219,3 +219,19 @@ document.addEventListener('scroll', () => {
     }
 })
 // ---------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+// end section visibility ----------------------------------------------------------------------------------------------------
+document.addEventListener('scroll', () => {
+    const div = document.getElementById('final')
+
+    if (window.scrollY > window.innerHeight) {
+        console.log('true')
+        div.setAttribute('data-show', 'true')
+    } else {
+        div.setAttribute('data-show', 'false')
+    }
+})

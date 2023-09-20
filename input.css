@@ -237,6 +237,18 @@ header {
     .short-grid {
         grid-template: 1fr 1fr / 1fr 1fr 1fr;
     }
+
+    [data-show="false"] {
+        display: none;
+    }
+
+    [data-show="true"] {
+        display: grid;
+    }
+
+    .end-section {
+        grid-template: 2fr 1fr / 1fr;
+    }
 }
 
 .platform-icons-contn {
@@ -249,4 +261,9 @@ header {
 
 #cards-container>div>p {
     margin: 8px 0;
+}
+
+.end-links {
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr;
 }
