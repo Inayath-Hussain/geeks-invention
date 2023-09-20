@@ -28,7 +28,9 @@
 
 @font-face {
     font-family: 'radikalRegular';
-    src: url(radikal-font-family-1694810713-0/RadikalTrial-Regular-BF642254c157251.otf) format('opentype');
+    src: url(radikal-font-family-1694810713-0/RadikalTrial-Regular-BF642254c157251.otf) format('opentype'),
+        url(webfontkit-20230919-214338/radikaltrial-regular-bf642254c157251-webfont.woff) format('woff'),
+        url(webfontkit-20230919-214338/radikaltrial-regular-bf642254c157251-webfont.woff2) format('woff2');
 }
 
 body {
