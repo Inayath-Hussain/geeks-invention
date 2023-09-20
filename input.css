@@ -26,13 +26,17 @@
     }
 }
 
+@font-face {
+    font-family: 'radikalRegular';
+    src: url(radikal-font-family-1694810713-0/RadikalTrial-Regular-BF642254c157251.otf) format('opentype');
+}
+
 body {
     overflow-x: hidden;
     margin: 0;
     background-color: black;
     color: #fff;
     font-family: 'radikalRegular', Helvetica, Arial, sans-serif;
-    src: url(radikal-font-family-1694810713-0/RadikalTrial-Regular-BF642254c157251.otf) format("opentype");
 }
 
 header {

@@ -183,17 +183,18 @@ document.addEventListener('scroll', () => {
     const sandwich = document.getElementById('sandwich')
 
     if (scrollPosition > currentScrollPosition) {
-        sandwich.style.position = 'fixed'
-        sandwich.style.top = '24px'
-        sandwich.style.right = '28px'
-        sandwich.style.backgroundColor = '#000'
-        sandwich.style.padding = '8px'
-        sandwich.style.width = '48px'
+        sandwich.style.display = 'flex'
+        // sandwich.style.position = 'fixed'
+        // sandwich.style.top = '24px'
+        // sandwich.style.right = '28px'
+        // sandwich.style.backgroundColor = '#000'
+        // sandwich.style.padding = '8px'
+        // sandwich.style.width = '48px'
     }
     else {
-        sandwich.style.position = 'static'
-        sandwich.style.width = '32px'
-        sandwich.style.padding = '0'
+        sandwich.style.display = 'none'
+        // sandwich.style.width = '32px'
+        // sandwich.style.padding = '0'
     }
     scrollPosition = currentScrollPosition
 })
