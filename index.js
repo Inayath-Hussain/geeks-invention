@@ -4,11 +4,11 @@ var init = function () {
     var isSmall = window.innerWidth < 1000;
 
     var ps = new ParticleSlider({
-        ptlGap: 4,
+        ptlGap: 6,
         mouseForce: 400,
         monochrome: true,
-        color: '#652f00',
-        ptlSize: 2.2
+        color: '#f98622',
+        ptlSize: 2
     });
 
     var gui = new dat.GUI();
@@ -100,6 +100,7 @@ const colors = {
 const mainContent = document.getElementById('main-content')
 const header = document.querySelector('header')
 
+// purple section --------------------------------------------------------------------
 document.addEventListener('scroll', (e) => {
     const purpleSection = document.getElementById('purple-section');
     const div = purpleSection.getBoundingClientRect()
@@ -122,9 +123,12 @@ document.addEventListener('scroll', (e) => {
     // header bg-color transition
     if (div.top <= (window.innerHeight * 10 / 100) && div.bottom > (window.innerHeight * 40 / 100)) header.style.backgroundColor = colors.section1
 
-    if (div.top > (window.innerHeight * 10 / 100)) header.style.backgroundColor = '#000'
+    if (div.top > (window.innerHeight * 10 / 100)) header.style.backgroundColor = '#16181c'
 })
+// ------------------------------------------------------------------------------------------------
 
+
+// all sections ---------------------------------------------------------------------------------
 document.addEventListener('scroll', (e) => {
     const divs = document.querySelectorAll('section')
     // console.log(divs)
@@ -174,7 +178,10 @@ document.addEventListener('scroll', (e) => {
     })
 
 })
+// ---------------------------------------------------------------------------------------------------------------------------------------
 
+
+// sandwich bar -----------------------------------------------------------------------------------------------------------------------
 let scrollPosition = 0;
 
 document.addEventListener('scroll', () => {
@@ -198,3 +205,17 @@ document.addEventListener('scroll', () => {
     }
     scrollPosition = currentScrollPosition
 })
+// ----------------------------------------------------------------------------------------------------------------------------------------
+
+
+// end of main content -------------------------------------------------------------------------------------------------------------
+document.addEventListener('scroll', () => {
+    const div = mainContent.getBoundingClientRect()
+
+    if (div.bottom <= (window.innerHeight * 40 / 100)) {
+        console.log('main content end')
+        mainContent.style.backgroundColor = '#16181c'
+        header.style.backgroundColor = '#16181c'
+    }
+})
+// ---------------------------------------------------------------------------------------------------------------------------------------
